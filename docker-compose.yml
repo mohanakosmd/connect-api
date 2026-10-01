@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  india-connect-api:
+    build:
+      context: .
+    container_name: 'app'
+    restart: 'always'
+    ports:
+      - "3001:3001"
+    volumes:
+     - '.:/usr/src/app'

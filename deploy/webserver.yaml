@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: india-connect-api
+  labels:
+    app: india-connect-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: india-connect-api
+  template:
+    metadata:
+      labels:
+        app: india-connect-api
+    spec:
+      containers:
+      - name: india-connect-api
+        image: connect_portal_app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
